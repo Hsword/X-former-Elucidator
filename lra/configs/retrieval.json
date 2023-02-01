@@ -1,0 +1,105 @@
+{
+    "dataset":{
+        "train":147086,
+        "dev":18090,
+        "test":17437
+    },
+    "model":{
+        "embedding_dim":128,
+        "hidden_dim":128,
+        "ff_dim":256,
+        "head_dim":64,
+        "num_head":2,
+        "num_layers":2,
+        "vocab_size":512,
+        "max_seq_len":4000,
+        "dropout_prob":0.1,
+        "pooling_mode":"CLS",
+        "num_classes": 2
+    },
+    "training":{
+        "batch_size":32,
+        "learning_rate":0.0001,
+        "warmup":800,
+        "lr_decay":"linear",
+        "weight_decay":0.1,
+        "eval_frequency":600,
+        "num_train_steps":30000,
+        "num_eval_steps":565
+    },
+    "inst_per_gpu":{
+        "softmax":8,
+        "longformer-128":32,
+        "bigbird-128":32,
+        "sparse-64-1":8,
+        "reformer-2-32":32,
+        "clustered-100-16-32":32,
+        "linear":32,
+        "cosformer":32,
+        "performer-relu-128":32,
+        "linformer-128":32,
+        "nystrom-32-35":32,
+        "synthesizer-FR-8":8,
+        "transnormer-128":32,
+        "pernormer-relu-128":32
+    },
+    "attn":{
+        "softmax":{},
+        "longformer-128":{
+            "window_size":128,
+            "first_token_view":false
+        },
+        "bigbird-128":{
+            "block_size":16,
+            "num_random_blocks":1
+        },
+        "sparse-64-1":{
+            "is_decoder":false,
+            "block_size":64,
+            "stride_c":0,
+            "use_cls_token":true
+        },
+        "reformer-2-32":{
+            "num_hash":2,
+            "chunk_len":32
+        },
+        "clustered-100-16-32":{
+            "num_clusters":100,
+            "topk":16,
+            "bits":32
+        },
+        "linear":{},
+        "cosformer":{
+            "act_fun":"relu",
+            "reweighting":true
+        },
+        "performer-relu-128":{
+            "rp_dim":128,
+            "generalized_attention":true,
+            "kernel_type":"relu"
+        },
+        "linformer-128":{
+            "linformer_k":128
+        },
+        "nystrom-32-35":{
+            "num_landmarks":32,
+            "conv_kernel_size":35
+        },
+        "synthesizer-FR-8":{
+            "synthesizer_mode":"factorized_random",
+            "factor_k": 8
+        },
+        "transnormer-128":{
+            "block_size": 128,
+            "kernel_type": "1+elu",
+            "attn_norm_type": "simple_rms_norm"
+        },
+        "pernormer-relu-128":{
+            "block_size": 128,
+            "rp_dim":128,
+            "generalized_attention":true,
+            "kernel_type":"relu",
+            "attn_norm_type": "simple_rms_norm"
+        }
+    }
+}

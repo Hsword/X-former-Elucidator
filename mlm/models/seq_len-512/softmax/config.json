@@ -1,0 +1,30 @@
+{
+    "model": {
+        "mixed_precision": false,
+        "attention_grad_checkpointing": false,
+        "gelu_grad_checkpointing": false,
+        "vocab_size": 50265,
+        "num_sen_type": 1,
+        "max_seq_len": 512,
+        "embedding_dim": 256,
+        "hidden_dim": 256,
+        "ff_dim": 1024,
+        "num_layers": 4,
+        "dropout_prob": 0.1,
+        "num_head": 4,
+        "head_dim": 64,
+        "attn_type": "softmax"
+    },
+    "pretraining_setting": {
+        "batch_size": 256,
+        "learning_rate": 0.0001,
+        "warmup": 0.01,
+        "batches_per_report": 10,
+        "batches_per_epoch": 800,
+        "epoch": 190,
+        "validate_batches_per_epoch": 20
+    },
+    "gpu_setting": {
+      "inst_per_gpu": 32
+    }
+}

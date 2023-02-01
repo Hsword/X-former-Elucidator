@@ -1,0 +1,33 @@
+{
+    "model": {
+        "mixed_precision": false,
+        "attention_grad_checkpointing": false,
+        "gelu_grad_checkpointing": false,
+        "embedding_dim": 512,
+        "hidden_dim": 512,
+        "ff_dim": 2048,
+        "num_channels": 3,
+        "image_size": 64,
+        "patch_size": 4,
+        "mask_patch_size": 8,
+        "encoder_stride": 4,
+        "use_mask_token": true,
+        "num_layers": 8,
+        "dropout_prob": 0.1,
+        "num_head": 8,
+        "head_dim": 64,
+        "attn_type": "softmax"
+    },
+    "pretraining_setting": {
+        "batch_size": 512,
+        "learning_rate": 2e-4,
+        "anneal_strategy": "cos",
+        "warmup": 0.1,
+        "batches_per_report": 10,
+        "batches_per_epoch": 195,
+        "epoch": 150
+    },
+    "gpu_setting": {
+      "inst_per_gpu": 128
+    }
+}
